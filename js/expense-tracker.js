@@ -86,15 +86,10 @@ function addExpense(){
     // console.log(categoryValue);
 
 
-     if(inputValue === ""){
+     if(!inputValue || !amountValue || !categoryValue || !dateValue){
+        alert("Please fill in all fields.");
         return;
-    } else if(amountValue === ""){
-        return;
-    } else if(categoryValue === ""){
-        return;
-    } else if(dateValue === ""){
-        return;
-    } 
+    }
 
 
     expenseTracker.push({

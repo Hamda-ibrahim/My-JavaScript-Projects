@@ -85,6 +85,18 @@ function addExpense(){
     let dateValue = date.value;
     // console.log(categoryValue);
 
+
+     if(inputValue === ""){
+        return;
+    } else if(amountValue === ""){
+        return;
+    } else if(categoryValue === ""){
+        return;
+    } else if(dateValue === ""){
+        return;
+    } 
+
+
     expenseTracker.push({
         name: inputValue,
         amount: amountValue,

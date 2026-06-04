@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTER APP</title>
+   <style>
+
+    h1{
+        text-align:center;
+    }
+    .counter{
+        display:flex;
+        justify-content: space-evenly;
+        /* align-items:center; */
+        font-size:40px;
+    }
+   </style>
+</head>
+<body>
+   
+    <h1 class="count">0</h1>
+    <span class="error"></span>
+    <div class="counter">
+
+        <button class="increment" onclick="
+            increment();
+            ">+</button>
+        <button onclick="decrement();">-</p>
+        <button onclick="reset();
+            ">Reset</button>
+    </div>
+
+
+    <script>
+
+        const savedValue = localStorage.getItem("counter");
+
+        let count = savedValue ? Number(savedValue) : 0;
+        let result = document.querySelector('.count');
+        result.innerHTML = count;
+
+        let error = document.querySelector('.error');
+
+
+
+        function update(){
+            result.innerHTML = count;
+
+            if(result.innerHTML > 0){
+                result.style.color = "green";
+            } else if(result.innerHTML < 0){
+                result.style.color = "red";
+            } else {
+                result.style.color = "grey";
+            }
+            
+            localStorage.setItem("counter", count);
+
+        }
+
+
+
+        function increment(){
+           count++;
+
+           update();
+           console.log(result);
+
+          
+        }
+
+        function decrement(){
+
+            if(count <= 0){                
+                error.innerHTML = "Count is less than 0";
+
+                error.style.color = "red";
+            } else {
+                count--;
+
+            }
+
+            update();
+
+        }
+
+        function reset(){
+
+            if(count === 0){
+                error.innerHTML = "Count is already reset.";
+
+                error.style.color = 'red';
+            } else {
+                count = 0;
+            }
+
+            update();
+
+            // count = 0;
+        }
+        
+    </script>
+    
+</body>
+</html>

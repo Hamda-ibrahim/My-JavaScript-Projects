@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expense Tracker</title>
+        <link rel="stylesheet" href="styles/expense-tracker.css">
+    </head>
+    <body>
+
+        <h1>Expense Tracker</h1>
+
+        <div class="expense-input-grid">
+            <input type="text" placeholder="Expense Name" class="expense-input">
+            <input type="text" placeholder="Amount" class="amount">
+            <select class="expense-types">
+                <option>Select Category</option>
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="date" class="expense-date">
+            <button onclick="addExpense();" class="addBtn">Add</button>
+            <table>
+                <tr>
+                    <th>Expense Name</th>
+                    <th> Amount</th>
+                    <th> Category</th>
+                    <th> Date</th>
+                    <th>Actions</th>
+                </tr>
+            </table>
+        </div>
+
+      
+        <div class="js-expense-res expense-grid"></div>
+        <div class="total"></div>
+
+
+       <script src="./js/expense-tracker.js"></script>
+    </body>
+</html>

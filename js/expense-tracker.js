@@ -2,30 +2,7 @@ const saved = localStorage.getItem("expense");
 const expenseTracker = saved ? JSON.parse(saved) : [];
 
 
-// const savedValue = JSON.parse(saved);
-
-
-
-//  const expenseTracker = [{
-//     name: "Transport",
-//     amount: 3,
-//     category: "Food",
-//     date: "4-6-2026"
-// }, {
-//     name: "Lunch",
-//     amount: 2,
-//     category: "Transport",
-//     date: "4-6-2026"
-// }];
-
-
-
-
-    
-
 renderExpense();
-
-
 
 function renderExpense(){
     expenseHTML = "";
@@ -40,7 +17,6 @@ function renderExpense(){
         const category = expenseObject.category;
         const date = expenseObject.date;
 
-        // total += amount;
 
         let html = `
                 <tr>
@@ -74,7 +50,6 @@ function renderExpense(){
 
 function addExpense(){
     const inputElement = document.querySelector('.expense-input');
-
     const amountElement = document.querySelector('.amount');
     const categoryInput = document.querySelector('.expense-types');
     const date = document.querySelector('.expense-date');
@@ -85,12 +60,10 @@ function addExpense(){
     let dateValue = date.value;
     // console.log(categoryValue);
 
-
-     if(!inputValue || !amountValue || !categoryValue || !dateValue){
+    if(!inputValue || !amountValue || !categoryValue || !dateValue){
         alert("Please fill in all fields.");
         return;
     }
-
 
     expenseTracker.push({
         name: inputValue,
@@ -99,7 +72,6 @@ function addExpense(){
         date: dateValue
     });
 
-    // const jsonString = JSON.stringify(expenseTracker);
     localStorage.setItem("expense", JSON.stringify(expenseTracker));
 
 

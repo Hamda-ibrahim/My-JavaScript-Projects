@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tip Calculator</title>
+        <!-- <link rel="stylesheet" href="styles/tip-calculator.css"> -->
+
+        <style>
+            body{
+                font-family: Arial;
+                background-color: #f2f2f2;
+            }
+
+            .container{
+                display:flex;
+                flex-direction: column;
+                background-color:white;
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+                width: 600px;
+                margin: 100px auto;
+                padding: 20px;
+                border-radius: 10px;
+
+            }
+
+            h1{
+                text-align: center;
+            }
+
+            input{
+                padding: 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+                border:1px solid #ccc;
+
+            }
+
+            label{
+                margin-top:10px;
+            }
+
+            button{
+                margin-top: 15px;
+                padding: 10px;
+                background-color: green;
+                color: white;
+                border:none;
+                font-size:15px;
+                cursor: pointer;
+            }
+            .total{
+                font-size: 18;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Tip Calculator</h1>
+            <p>Enter the bill amount and tip percentage to calculate the total</p>
+            <label>Bill amount:</label>
+            <input type="number" class="bill">
+            <label>Tip percentage:</label>
+            <input type="number" class="tip">
+            <button onclick="calculateTip();">CALCULATE</button>
+            <P class="total">Total: 0.00</P>
+        </div>
+
+        <script src="My-JavaScript-Projects/js/tip-calculator.js"></script>
+    </body>
+</html>
